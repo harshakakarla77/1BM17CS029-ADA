@@ -1,14 +1,30 @@
 #include<stdio.h>
+#include<stdlib.h>
 void main()
 {
-int beg,mid,end,i,n,flag=0,arr[100],ele;
+int beg,mid,end,n,flag=0,arr[100],ele,temp,i,j,k;
 printf("Enter the number of elements in the array:");
 scanf("%d",&n);
-printf("Enter the elements:");
+printf("The elements are:");
 	for(i=0;i<n;i++)
-	{
-	scanf("%d",&arr[i]);
+	{	
+	arr[i]=rand()%100;
 	}
+	for(j=0;j<n-1;j++)
+	{
+		for(k=0;k<n-j-1;k++)
+		{
+			if(arr[k]>arr[k+1])
+			{
+			temp=arr[k];
+			arr[k]=arr[k+1];
+			arr[k+1]=temp;
+			}
+		}
+	}
+for(i=0;i<n;i++)
+printf("%d\t",arr[i]);
+printf("\n");
 printf("Enter the search element:");
 scanf("%d",&ele);
 beg=0,end=n-1;
@@ -36,5 +52,4 @@ else
 printf("Element not found in the given array!!");
 printf("\n");
 }
-
 
