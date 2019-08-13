@@ -10,8 +10,7 @@ void main()
   for(int i=0;i<n;i++)
   {
   arr[i]=rand()%50;
-  printf("%d",arr[i]);
-  printf("\n");
+  printf("%d\t",arr[i]);
   }
   max=arr[0];
   for(int i=0;i<n;i++)
